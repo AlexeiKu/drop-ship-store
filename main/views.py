@@ -5,3 +5,4 @@ def index(reqest):
 
 def about(reqest):
     return render(reqest, 'about.html')
+

@@ -633,6 +633,12 @@ ul.top_icon li a {
      color: #ffffff;
 }
 
+--- my ---
+.dropdown-item {
+    background-color: #ee580f;
+    border: 0;
+------
+
 .right-dropdown-language>a {
      line-height: 10px;
      padding: 5px 5px;
