@@ -6,8 +6,16 @@
 {% endblock title %}
 
 {% block container %}
-   ============= хуйня ========= регистрация
-<h1>хуйня</h1>
-<h2>хуйня</h2>
-<h3>хуйня</h3>
+
+
+<div class="container">
+  <div class="row">
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ login_form }}
+      <p>AUTH</p>
+      <p><input type="submit" value="SEND"></p><br>
+    </form>
+  </div>
+</div>
 {% endblock container %}
