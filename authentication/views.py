@@ -14,6 +14,15 @@ def login_user(reqest):
             if user:
                 login(reqest, user)
                 return redirect('index')
+            else:
+                context = {
+                    'login_form': login_form,
+                    'attention': f'The user with username {username} and password was not found'
+                }
+        else:
+            context = {
+                'login_form': login_form,
+            }
     return render(reqest, 'auth/login.html', context)
 
 def register(reqest):
