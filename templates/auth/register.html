@@ -6,20 +6,20 @@
 {% endblock title %}
 
 {% block container %}
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
   <div class="row">
     <form method="post" action="{% url 'register' %}">
       {% csrf_token %}
-      {{ user_form }}
       <p>REGISTRATION</p>
-      <fieldset>
-        <label for="login">Login</label><br>
-        <input type="text"  class="form-input" id="login"><br>
-        <label for="email">Email</label><br>
-        <input type="text" class="form-input"  id="email"><br>
-        <label for="password">Password</label><br>
-        <input type="text" class="form-input" id="password"><br>
-      </fieldset>
+      {% for field in user_form %}
+      <div class="row">
+        <div class="form-input">
+            <p>{{ field.errors }}</p>
+            <p>{{ field.label_tag }}</p>
+            <p>{{ field }}</p>
+        </div>
+      </div>
+      {% endfor %}
       <br>
       <p><input type="submit" value="REGISTRATION"></p><br>
     </form>
